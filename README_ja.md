@@ -1,9 +1,8 @@
 # M5Stack-Stackchan with  function calling
 
 [![Powered By PlatformIO](https://img.shields.io/badge/powered-PlatformIO-brightgreen)](https://platformio.org/)
-[![Build Status](https://travis-ci.com/meganetaaan/m5stack-avatar.svg?branch=master)](https://travis-ci.com/meganetaaan/m5stack-avatar)
 
-![alt text](IMG2-1.jpg)
+![alt text](/images/IMG2-1.jpg)
 
 [ENGLISH](README.md)
 
@@ -21,7 +20,7 @@
 * HexLEDの表示パターンは下記ツールで作成しています。
   [HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall](https://github.com/QtDogBow/HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall)
 * HexLEDの固定にはTakao-Baseのshellを改造しています。
- ![alt text](IMG4.jpg)
+ ![alt text](/images/IMG4.jpg)
 * M5Stack CoreS3で動作確認。
 
 ## インストール
