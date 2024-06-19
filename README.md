@@ -21,7 +21,7 @@ You can use HexLED and weather forecast using OpenAI's function calling.
 * The HexLED display pattern is created using the following tool.
   [HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall](https://github.com/QtDogBow/HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall)
 * Takao-Base shell is modified to fix HexLED.
-  ![alt text](IMG4.jpg)
+  ![alt text](/images/IMG4.jpg)
 * Operation confirmed with M5Stack CoreS3.
 
 ## install
