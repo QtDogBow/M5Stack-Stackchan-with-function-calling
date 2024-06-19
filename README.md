@@ -1,78 +1,23 @@
-# M5Stack-Stackchan with  function calling
+# AI_StackChan2_DevCam
+robo8080さんの[AIｽﾀｯｸﾁｬﾝ2](https://github.com/robo8080/AI_StackChan2)をベースに、M5Stack CoreS3の内蔵カメラを扱うプログラムを組み込みました。
+<br><br>
 
-[![Powered By PlatformIO](https://img.shields.io/badge/powered-PlatformIO-brightgreen)](https://platformio.org/)
-[![Build Status](https://travis-ci.com/meganetaaan/m5stack-avatar.svg?branch=master)](https://travis-ci.com/meganetaaan/m5stack-avatar)
+![画像1](images/image1.png)<br><br>
 
-![alt text](IMG2-1.jpg)
+### 主な仕様
+- 顔検出するとｽﾀｯｸﾁｬﾝとの会話を起動します。
+  - LCD左側をタッチするとサイレントモードになり、顔検出しても会話を起動しなくなります。その代わり、サーボで顔を追従するようになります。
+- ｽﾀｯｸﾁｬﾝの顔の隅にカメラ画像が表示されます。画像部分をタッチすると表示ON/OFFできます。
+- AIｽﾀｯｸﾁｬﾝ2の既存機能
+  - 額部分をタッチするとｽﾀｯｸﾁｬﾝが聞き取りを開始します。
+  - LCD右側をタッチするとバッテリ残量を声で教えてくれます。
 
-[ENGLISH](README.md)
 
-## 機能
-
-* OpenAIのfunction callingを使いHexLEDと天気予報を利用できます。
-  function callingのコーディングは手習い的に単純にしています。
-* 元ソースはronron-ghさんの下記作品です。但し顔認識は無効です。
-  [AI_StackChan2_DevCam](https://github.com/ronron-gh/AI_StackChan2_DevCam)
-* 無言のときの吹き出しに時刻を表示します。
-* HexLED制御はronron-ghさんの下記作品のコードです。
-  [AI_StackChan2_FuncCall](https://github.com/ronron-gh/AI_StackChan2_FuncCall)
-* 独り言はソースコードで有効に固定しています。
-* 無操作が続くと独り言が減り、最終的にはシャットダウンします。
-* HexLEDの表示パターンは下記ツールで作成しています。
-  [HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall](https://github.com/QtDogBow/HexLED-Editor-for-ronronsan-AI_StackChan2_FuncCall)
-* HexLEDの固定にはTakao-Baseのshellを改造しています。
- ![alt text](IMG4.jpg)
-* M5Stack CoreS3で動作確認。
-
-## インストール
-
-### 前提
-
-* VSCode 1.90.1 , Platform IOで動作確認しています。
-
-### 準備
-
-* SDのwifi.txtに下記情報を記述してください。
-  
-```sh
-WIFI_SSID
-WIFI_PASS
-```
-
-* SDのapikey.txtに下記情報を記述してください。天気情報はOpenWeatherのフリーアカウントにより取得しています。
-  [OpenWeather](https://openweathermap.org/)
-
-```sh
-OPENAI_API_KEY
-VOICEVOX_APIKEY
-STT_APIKEY
-OPENWEATHER_APIKEY
-```
-
-## 使い方
-
-```sh
-
-HexLEDを点灯させるには、額の辺りを押してから「LEDパネルをパターン７で点灯させて」などのように言います。
-パターンは０から９まで登録してあります。
-
-天気を聞くには、額の辺りを押してから「東京の天気は？」のように言います。
-OpenWeatherのフリーアカウントでは主要都市の現在の天気ぐらいしか答えてくれません。
-```
-
-## 独り言を止めるには
-
-main.cppのloop()関数の先頭から5行目辺りにある下記行をコメントアウトしてください。
-
-```cpp
-
-random_time = MILLIS_MONOLOGUE_SHORT_INTERVAL;//独り言モードになる。
-```
-
-## 注意
-
-* シャットダウン後の復帰には電源ボタンの長押しが要るようです。
-* 滑りやすい机の上で独り言を言い続けると、スタックチャンが落下する事
-  があります。
-* 独り言を喋っているときにHexLED点灯を提案または実行する事がありま
-  す。これは想定外でした。
+### 補足
+- ｽﾀｯｸﾁｬﾝとお話するためには次のAPIキーが必要です。取得方法は[AIｽﾀｯｸﾁｬﾝ2のREADME](https://github.com/robo8080/AI_StackChan2_README/)を参照ください。
+  - ChatGPT
+  - Google Cloud TTS
+  - VoiceVox
+- フォルダ名が長いため、ワークスペースの場所によってはライブラリのインクルードパスが通らない場合があります。
+なるべくCドライブ直下に近い場所をワークスペースにしてください。(例 C:\Git)
+- カメラ画像を表示するために、Avatarライブラリをlibフォルダにコピーして変更を加えています（platformio.iniではロードしない）。
