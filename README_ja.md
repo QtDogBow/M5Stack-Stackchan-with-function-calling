@@ -2,7 +2,7 @@
 
 [![Powered By PlatformIO](https://img.shields.io/badge/powered-PlatformIO-brightgreen)](https://platformio.org/)
 
-![alt text](/images/IMG2-1.jpg)
+![alt text](/images/IMG2.jpg)
 
 [ENGLISH](README.md)
 
