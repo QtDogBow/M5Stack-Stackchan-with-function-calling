@@ -1,9 +1,8 @@
 # M5Stack-Stackchan with  function calling
 
 [![Powered By PlatformIO](https://img.shields.io/badge/powered-PlatformIO-brightgreen)](https://platformio.org/)
-[![Build Status](https://travis-ci.com/meganetaaan/m5stack-avatar.svg?branch=master)](https://travis-ci.com/meganetaaan/m5stack-avatar)
 
-![alt text](IMG2.jpg)
+![alt text](/images/IMG2.jpg)
 
 [日本語](README_ja.md)
 
