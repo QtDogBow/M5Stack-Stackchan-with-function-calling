@@ -78,7 +78,7 @@ String https_post_json(const char* url, const char* json_string, const char* roo
         // start connection and send HTTP header
         //https.setTimeout( 10000 ); 
         https.addHeader("Content-Type", "application/json");
-        https.addHeader("Authorization", "Bearer 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");
+        https.addHeader("Authorization", "Bearer xxxxxxxxxxxx");
         //int httpCode = https.GET();
         int httpCode = https.POST((uint8_t *)json_string, strlen(json_string));
   
@@ -227,8 +227,6 @@ static String URLEncode(const char* msg) {
 // char *tts_parms06 = "&speaker=3";
 
 void Voicevox_tts(char *text,char *tts_parms){
-//  String tts_url = String("https://api.tts.quest/v1/voicevox/?text=") +  URLEncode(text) + String(tts_parms);
-//  String tts_url = String("https://api.tts.quest/v3/voicevox/synthesis?key=y958S773N4I7356&text=") +  URLEncode(text) + String(tts_parms);
   String tts_url = String("https://api.tts.quest/v3/voicevox/synthesis?key=")+ VOICEVOX_API_KEY +  String("&text=") +  URLEncode(text) + String(tts_parms);
   String URL = voicevox_tts_url(tts_url.c_str(), root_ca);
   Serial.println(tts_url);
